@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hammer Strength Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>HAMMER STRENGTH TEST</h1>
+        
+        <div class="game-area">
+            <div class="strength-meter">
+                <div class="needle"></div>
+                <div class="hammer"></div>
+                <div class="marker-90">90°</div>
+                <div class="marker-0">0°</div>
+                <div class="marker-180">180°</div>
+            </div>
+            
+            <div class="controls">
+                <button id="stop-button" class="action-button">STOP HAMMER!</button>
+                <div class="score-display">
+                    <div id="score-value">0</div>
+                    <div class="score-label">SCORE</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="two-player-mode">
+            <button id="two-player-btn" class="mode-button">2-PLAYER MODE</button>
+        </div>
+        
+        <div id="player-turn" class="player-turn">Player 1's Turn</div>
+        
+        <div class="instructions">
+            <p>Press the button when the needle is at 90° for maximum score!</p>
+        </div>
+    </div>
+
+    <div id="winner-popup" class="winner-popup">
+        <div class="popup-content">
+            <h2 id="winner-text">Player 1 Wins!</h2>
+            <button id="close-popup" class="action-button">PLAY AGAIN</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disc Battle 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="particles-container" id="particles-js"></div>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="disc red"></div>
+                <h1>Disc <span>Battle</span> 4</h1>
+                <div class="disc yellow"></div>
+            </div>
+            <div class="controls">
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="sound-toggle">
+                    <i class="fas fa-volume-up"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="soundToggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fas fa-volume-mute"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="player-info player1 active">
+                <div class="player-header">
+                    <h3>Player 1</h3>
+                    <div class="disc red pulse"></div>
+                </div>
+                <div class="timer-container">
+                    <div class="timer-bar" id="player1TimerBar"></div>
+                    <div class="timer" id="player1Timer">30</div>
+                </div>
+            </div>
+            <div class="game-status">
+                <div class="status-message" id="statusMessage">
+                    <div class="turn-indicator"></div>
+                    <p>Player 1's turn</p>
+                </div>
+                <div class="moves-counter">
+                    <i class="fas fa-chess-board"></i>
+                    <span id="movesCount">0</span>
+                </div>
+            </div>
+            <div class="player-info player2">
+                <div class="player-header">
+                    <h3>Player 2</h3>
+                    <div class="disc yellow"></div>
+                </div>
+                <div class="timer-container">
+                    <div class="timer-bar" id="player2TimerBar"></div>
+                    <div class="timer" id="player2Timer">30</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="board-frame">
+                <div class="board" id="gameBoard"></div>
+                <div class="board-overlay"></div>
+            </div>
+            <div class="column-indicators">
+                <div class="indicator" data-col="0"><span>1</span></div>
+                <div class="indicator" data-col="1"><span>2</span></div>
+                <div class="indicator" data-col="2"><span>3</span></div>
+                <div class="indicator" data-col="3"><span>4</span></div>
+                <div class="indicator" data-col="4"><span>5</span></div>
+                <div class="indicator" data-col="5"><span>6</span></div>
+                <div class="indicator" data-col="6"><span>7</span></div>
+            </div>
+        </div>
+
+        <div class="block-message" id="blockMessage">
+            <div class="block-header">
+                <i class="fas fa-ban"></i>
+                <h3>Block a Column</h3>
+            </div>
+            <p>Player 2, select a column to block for Player 1's next turn:</p>
+            <div class="block-columns" id="blockColumns"></div>
+        </div>
+
+        <div class="modal" id="gameOverModal">
+            <div class="modal-content">
+                <div class="confetti-container" id="confetti"></div>
+                <div class="modal-header">
+                    <h2 id="modalTitle">Game Over</h2>
+                    <div class="winner-disc" id="winnerDisc"></div>
+                </div>
+                <p id="modalMessage"></p>
+                <div class="leaderboard" id="leaderboard">
+                    <div class="leaderboard-header">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Leaderboard</h3>
+                    </div>
+                    <table id="scoreTable">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Wins</th>
+                                <th>Win Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="modal-buttons">
+                    <button id="playAgainBtn" class="glow-effect">
+                        <span class="glow-container"></span>
+                        Play Again
+                    </button>
+                    <button id="newGameBtn" class="outline-btn">New Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="dropSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"></audio>
+    <audio id="winSound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+    <audio id="blockSound" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3"></audio>
+    <audio id="countdownSound" src="https://assets.mixkit.co/sfx/preview/mixkit-software-interface-start-2574.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
